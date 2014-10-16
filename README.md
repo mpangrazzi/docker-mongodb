@@ -7,7 +7,8 @@ This repository contains **Dockerfile** of [MongoDB](http://www.mongodb.org) for
 
 - Run `mongod` as `mongodb` user
 - Overwrite default `mongodb.conf` with supplied one
-- Expose port 22 for SSH access
+- Expose port **22** (ssh), **27017** (mongod) and **28017** (http)
+- Use [supervisord](http://supervisord.org) to manage **sshd** and **mongod** execution
 
 ### Base image
 
