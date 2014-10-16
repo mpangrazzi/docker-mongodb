@@ -19,6 +19,11 @@ RUN \
 
 COPY mongod.conf /etc/mongod.conf
 
+# Data storage
+
+VOLUME /data/db
+RUN chown -R mongodb /data/db
+
 # Install and setup supervisor
 
 RUN mkdir -p /var/log/supervisor
@@ -33,10 +38,6 @@ RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/ss
 # Launch supervisor
 
 CMD ["/usr/bin/supervisord"]
-
-# Data storage
-
-VOLUME /data/db
 
 # Expose mongod, MongoDB HTTP interface, SSH
 
