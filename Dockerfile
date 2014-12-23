@@ -22,7 +22,7 @@ COPY mongod.conf /etc/mongod.conf
 # Data storage
 
 VOLUME /data/db
-RUN chown -R mongodb /data/db
+RUN chown -R mongodb:mongodb /data/db
 
 # Install and setup supervisor
 
