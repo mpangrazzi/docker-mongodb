@@ -21,8 +21,7 @@ COPY mongod.conf /etc/mongod.conf
 
 # Data storage
 
-VOLUME /data/db
-RUN chown -R mongodb:mongodb /data/db
+VOLUME /var/lib/mongodb
 
 # Install and setup supervisor
 
@@ -42,3 +41,4 @@ CMD ["/usr/bin/supervisord"]
 # Expose mongod, MongoDB HTTP interface, SSH
 
 EXPOSE 27017 28017 22
+
