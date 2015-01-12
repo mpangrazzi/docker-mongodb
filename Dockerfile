@@ -38,7 +38,8 @@ RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/ss
 
 CMD ["/usr/bin/supervisord"]
 
-# Expose mongod, MongoDB HTTP interface, SSH
+# Exposing (in order):
+# mongod, MongoDB HTTP interface, SSH, supervisord HTTP interface
 
-EXPOSE 27017 28017 22
+EXPOSE 27017 28017 22 9001
 
