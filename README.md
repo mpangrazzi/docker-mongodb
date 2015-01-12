@@ -7,8 +7,8 @@ This repository contains **Dockerfile** of [MongoDB](http://www.mongodb.org) for
 
 - Run `mongod` as `mongodb` user
 - Overwrite default `mongodb.conf` with supplied one
-- Expose port **22** (ssh), **27017** (mongod) and **28017** (http)
-- Use [supervisord](http://supervisord.org) to manage **sshd** and **mongod** execution
+- Expose port **22** (ssh), **27017** (mongod), **28017** (mongo http), **9001** (supervisord http)
+- Use [supervisord](http://supervisord.org) to execute and monitor **sshd** and **mongod**
 - Mount default `/var/lib/mongodb` to a Docker Volume (default: `/data/db` on host) for avoiding data loss if image is destroyed
 
 ### Base image
